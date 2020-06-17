@@ -19,3 +19,14 @@ after_success:
     - docker push egoossens/multi-nginx
     - docker push egoossens/multi-server
     - docker push egoossens/multi-worker
+deploy:
+    provider: elasticbeanstalk
+    region: eu-west-1
+    app: multi-docker
+    env: MultiDocker-env-1
+    bucket_name: elasticbeanstalk-eu-west-1-560657129093
+    bucket_path: docker-multi
+    on:
+        branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY

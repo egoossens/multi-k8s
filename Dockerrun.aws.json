@@ -23,8 +23,8 @@
             "memory": 128
         },
         {
-            "name": "worker",
-            "image": "egoossens/multi-worker",
+            "name": "nginx",
+            "image": "egoossens/multi-nginx",
             "essential": true,
             "portMappings": [
                 {
